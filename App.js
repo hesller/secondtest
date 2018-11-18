@@ -53,6 +53,7 @@ class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>this time I added the codepush options</Text>
+        <Text style={styles.welcome}>and now the export method</Text>
 
         <Button 
           title='track event'

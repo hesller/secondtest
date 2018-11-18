@@ -22,9 +22,6 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-let codePushOptions = { checkFrequency: 
-  codePush.CheckFrequency.ON_APP_RESUME };
-
 type Props = {};
 class App extends Component<Props> {
 
@@ -103,4 +100,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CodePush(codePushOptions)(App);
+let codePushOptions = { checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME };
+
+App = CodePush(codePushOptions)(App);
+
+export default App;

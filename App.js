@@ -53,6 +53,7 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>I added this text using codepush</Text>
+        <Text style={styles.instructions}>and this was for the second release</Text>
         <Button 
           title='track event'
           onPress={() => { 

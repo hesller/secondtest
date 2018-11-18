@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 
 import Analytics from "appcenter-analytics";
 import Crashes from "appcenter-crashes";
@@ -23,6 +23,12 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  constructor(props) {
+    super(props);
+
+
+  }
 
   func1() {
     throw Error('My uncaugth javascript exception')
@@ -48,7 +54,7 @@ export default class App extends Component<Props> {
         />
         <Button 
           title='Native crash'
-          onPress={() => {return Crashes.generateTestCrash}}
+          onPress={() => {return Crashes.generateTestCrash()}}
         />
         <Button 
           title='Js crash'

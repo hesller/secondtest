@@ -54,6 +54,7 @@ class App extends Component<Props> {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>I added this text using codepush</Text>
         <Text style={styles.instructions}>and this was for the second release</Text>
+        <Text style={styles.instructions}>and this was for the third update</Text>
         <Button 
           title='track event'
           onPress={() => { 

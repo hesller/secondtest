@@ -11,6 +11,7 @@ import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 
 import Analytics from "appcenter-analytics";
 import Crashes from "appcenter-crashes";
+//import AppCenter from 'appcenter';
 
 import CodePush from 'react-native-code-push';
 
@@ -27,7 +28,7 @@ export default class App extends Component<Props> {
   constructor(props) {
     super(props);
 
-
+    //AppCenter.start(getApplication(), "05a72986-601d-4ce2-880a-ecea77711b6a", Analytics.class, Crashes.class);
   }
 
   func1() {
@@ -40,6 +41,13 @@ export default class App extends Component<Props> {
     })
   }
 
+  trackEvent() {
+    Analytics.trackEvent('Clicked on Button', { 
+      time: new Date().getTime()
+    });
+    alert('event was clicked');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -48,9 +56,9 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>{instructions}</Text>
         <Button 
           title='track event'
-          onPress={() => { return Analytics.trackEvent('Clicked on Button', { 
-            time: new Date().getTime(), 
-            app: 'Second-Test' });}}
+          onPress={() => { 
+            this.trackEvent();
+          }}
         />
         <Button 
           title='Native crash'

@@ -1,4 +1,6 @@
 <resources>
     <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">GfOBDcJb52riC218Wlr_wJDvs0k80e8f4a9f-1405-45c4-9c49-33ac84907313</string>
     <string name="app_name">SecondTest</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true">ALWAYS_SEND</string>
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true">ALWAYS_SEND</string>
 </resources>

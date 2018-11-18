@@ -22,6 +22,9 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+let codePushOptions = { checkFrequency: 
+  codePush.CheckFrequency.ON_APP_RESUME };
+
 type Props = {};
 class App extends Component<Props> {
 
@@ -34,10 +37,11 @@ class App extends Component<Props> {
   func1() {
     throw Error('My uncaugth javascript exception')
   }
+
   codepushSync() {
     CodePush.sync({
       updateDialog: true,
-      installMode: CodePush.InstallMode.ON_NEXT_RESUME
+      installMode: CodePush.InstallMode.IMMEDIATE,
     })
   }
 
@@ -51,11 +55,8 @@ class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>I added this text using codepush</Text>
-        <Text style={styles.instructions}>and this was for the second release</Text>
-        <Text style={styles.instructions}>and this was for the third update</Text>
-        <Text style={styles.instructions}>and this was for the fourth update</Text>
+        <Text style={styles.welcome}>this time I added the codepush options</Text>
+
         <Button 
           title='track event'
           onPress={() => { 
@@ -102,4 +103,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CodePush(App);
+export default CodePush(codePushOptions)(App);

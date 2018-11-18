@@ -23,7 +23,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+class App extends Component<Props> {
 
   constructor(props) {
     super(props);
@@ -99,3 +99,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+export default CodePush(App);
